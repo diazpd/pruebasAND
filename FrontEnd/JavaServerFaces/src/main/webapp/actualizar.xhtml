@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>Actualización Task APP</title>
+</h:head>
+<h:body>
+	<h3>Actualización de tarea.</h3>
+	<h:form>
+
+		<h:panelGrid columns="2">
+
+
+			<h:outputLabel>Id:</h:outputLabel>
+			<h:outputLabel>#{gestionTaskBean.updateTask.id}</h:outputLabel>
+
+			<h:outputLabel>Titulo:</h:outputLabel>
+			<h:inputText value="#{gestionTaskBean.updateTask.title}"></h:inputText>
+
+			<h:outputLabel>Descrpción:</h:outputLabel>
+			<h:inputText value="#{gestionTaskBean.updateTask.description}"></h:inputText>
+
+			<h:outputLabel>Completa:</h:outputLabel>
+			<h:selectBooleanCheckbox
+				value="#{gestionTaskBean.updateTask.complete}">
+			</h:selectBooleanCheckbox>
+
+			<h:outputLabel>Fecha expiración(yyyy-mm-dd):</h:outputLabel>
+			<h:inputText value="#{gestionTaskBean.strDate}"></h:inputText>
+
+			<h:outputLabel>Responsable:</h:outputLabel>
+			<h:inputText value="#{gestionTaskBean.updateTask.personName}"></h:inputText>
+
+
+			<h:commandButton value="Actualizar"
+				action="#{gestionTaskBean.actualizar()}"></h:commandButton>
+		</h:panelGrid>
+
+		<h:commandButton value="Volver" action="welcome"></h:commandButton>
+	</h:form>
+</h:body>
+</html>
